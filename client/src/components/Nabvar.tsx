@@ -4,19 +4,46 @@ import Image from 'next/image'
 import * as Dialog from 'toldo'
 import { MenuIcon } from './icons/Menu'
 import { AnimatePresence } from 'motion/react'
-import { useState } from 'react'
 import { DefaultButton } from '@/components/buttons/Button'
 import { motion } from 'motion/react'
+import React, { useEffect, useState } from 'react'
 
 export const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen)
+    if (window.scrollY <= 0) {
+      if (!isModalOpen) {
+        document.getElementById('navbar-overlay')?.classList.add('bg-gradient-to-r', 'from-[#333399]', 'to-[#ff00cc]')
+      }
+      if (isModalOpen) {
+        setTimeout(() => {
+          document.getElementById('navbar-overlay')?.classList.remove('bg-gradient-to-r', 'from-[#333399]', 'to-[#ff00cc]')
+        }, 700)
+      }
+    }
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const navbar = document.getElementById('navbar-overlay')
+      if (window.scrollY <= 0) {
+        navbar?.classList.remove('bg-gradient-to-r', 'from-[#333399]', 'to-[#ff00cc]')
+      }
+      if (window.scrollY > 0) {
+        navbar?.classList.add('bg-gradient-to-r', 'from-[#333399]', 'to-[#ff00cc]')
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <nav className='h-24 z-50 fixed top-0 flex flex-row space-x-2 py-4 w-full bg-gradient-to-r from-[#333399] to-[#ff00cc] items-center text-[#f8f9fa] px-16 lg:px-2'>
+    <nav id='navbar-overlay' className='h-24 z-50 fixed top-0 flex flex-row space-x-2 py-4 w-full items-center text-[#f8f9fa] px-16 lg:px-2'>
       <Image className='max-h-20 w-auto' src='/Logo_AMUMRA_short_white.png' alt='Next.js logo' width={130} height={20} priority />
 
       <div className='flex-grow'></div>
@@ -44,9 +71,9 @@ export const Navbar = () => {
                 <Dialog.Overlay className='fixed inset-0 bg-black-a10' />
                 <Dialog.Content>
                   <motion.div
-                    initial={{ y: '-100%' }}
+                    initial={{ y: '-150%' }}
                     animate={{ y: 0 }}
-                    exit={{ y: '-100%' }}
+                    exit={{ y: '-150%' }}
                     transition={{ duration: 0.7 }}
                     className='z-40 start-0 fixed top-24 left-1/2 w-full flex-col overflow-hidden bg-gradient-to-r from-[#333399] to-[#ff00cc]'
                   >

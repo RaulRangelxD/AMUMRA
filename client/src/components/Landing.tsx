@@ -79,9 +79,9 @@ export const Landing = () => {
       {/* Triangles */}
       {[
         { size: 50, top: '45%', right: '2%', rotate: 30 },
-        { size: 75, top: '30%', left: '20%', rotate: 15 },
-        { size: 45, top: '80%', left: '15%', rotate: 40 },
-        { size: 45, top: '60%', right: '15%', rotate: -40 },
+        { size: 75, top: '30%', left: '15%', rotate: 15 },
+        { size: 45, top: '80%', left: '12%', rotate: 40 },
+        { size: 45, top: '65%', right: '15%', rotate: -40 },
       ].map((triangle, index) => (
         <motion.div
           key={index}
