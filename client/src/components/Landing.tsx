@@ -3,12 +3,6 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 export const Landing = () => {
-  const floatingAnimation = {
-    initial: { opacity: 0, translateY: '-20px' },
-    animate: { opacity: 1, translateY: '0px' },
-    transition: { duration: 0.5 },
-  }
-
   return (
     <div className='relative flex items-center justify-center h-screen overflow-hidden bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
       {/* Main Text */}
