@@ -13,6 +13,7 @@
     "next": "15.1.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-social-media-embed": "^2.5.17",
     "toldo": "^0.1.4"
   },
   "devDependencies": {

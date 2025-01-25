@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang='es' className='bg-[#f8f9fa]'>
       <body className={`${MontserratFont}`}>
-        <div className='flex flex-col min-h-screen bg-[#f8f9fa] text-[#212529] bg-fixed'>
+        <div className='flex flex-col min-h-screen bg-[#f8f9fa] text-default-dark bg-fixed'>
           <Navbar />
           <main className={`flex-1 flex`}>{children}</main>
           <Footer />

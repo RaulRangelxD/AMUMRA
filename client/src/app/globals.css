@@ -2,20 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  .btn-primary-first {
+    @apply text-default-light bg-primary hover:bg-primary-light border-2 border-primary hover:border-primary-light font-semibold rounded-md transition duration-500;
   }
-}
+  .btn-primary-second {
+    @apply text-default-light border-2 bg-default-dark bg-opacity-25 dark:bg-opacity-25 hover:bg-default-dark hover:bg-opacity-50 hover:dark:bg-opacity-50 border-primary hover:border-primary-light font-semibold rounded-md transition duration-500;
+  }
+  .btn-primary-third {
+    @apply text-default-light bg-default-dark bg-opacity-25 dark:bg-opacity-25 hover:bg-default-dark hover:bg-opacity-50 hover:dark:bg-opacity-50 font-semibold rounded-md transition duration-500;
+  }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  .btn-secondary-first {
+    @apply text-default-light bg-secondary hover:bg-secondary-light border-2 border-secondary hover:border-secondary-light font-semibold rounded-md transition duration-500;
+  }
+  .btn-secondary-second {
+    @apply text-default-light border-2 bg-default-dark bg-opacity-25 dark:bg-opacity-25 hover:bg-default-dark hover:bg-opacity-50 hover:dark:bg-opacity-50 border-secondary hover:border-secondary-light font-semibold rounded-md transition duration-500;
+  }
+  .btn-secondary-third {
+    @apply text-default-light bg-default-dark bg-opacity-25 dark:bg-opacity-25 hover:bg-default-dark hover:bg-opacity-50 hover:dark:bg-opacity-50 font-semibold rounded-md transition duration-500;
+  }
+
+  .btn-transparent {
+    @apply bg-transparent text-default-light hover:bg-default-dark hover:bg-opacity-50 hover:dark:bg-opacity-50 font-semibold rounded-md transition duration-500;
+  }
 }

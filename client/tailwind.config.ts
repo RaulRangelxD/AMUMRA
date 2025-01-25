@@ -5,8 +5,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
+        default: {
+          DEFAULT: '#1D4ED8',
+          light: '#F5F5F5',
+          dark: '#0A0A0A',
+        },
+        primary: {
+          DEFAULT: '#ff00cc',
+          light: '#ff00ff',
+          dark: '#ff00aa',
+        },
+        secondary: {
+          DEFAULT: '#333399',
+          light: '#3333ff',
+          dark: '#3333aa',
+        },
       },
       keyframes: {
         floating: {

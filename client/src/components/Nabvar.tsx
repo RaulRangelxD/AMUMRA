@@ -4,7 +4,7 @@ import Image from 'next/image'
 import * as Dialog from 'toldo'
 import { MenuIcon } from './icons/Menu'
 import { AnimatePresence } from 'motion/react'
-import { DefaultButton } from '@/components/buttons/Button'
+import { DefaultButton } from '@/components/buttons/DefaultButton'
 import { motion } from 'motion/react'
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
@@ -147,7 +147,7 @@ export const Navbar = () => {
       <ul className='space-x-4 hidden lg:flex'>
         {navItems.map((item, index) => (
           <li key={item.title} className='relative' onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)}>
-            <Link href={item.href} className='flex items-center py-2 hover:text-[#FFFFFF] transition-colors duration-200'>
+            <Link href={item.href} className='flex items-center py-2 hover:text-default-light transition-colors duration-200'>
               {item.title}
             </Link>
             {item.dropdownItems && hoveredIndex === index && (
@@ -191,12 +191,12 @@ export const Navbar = () => {
                     <ul className='flex flex-col'>
                       {navItems.map((item, index) => (
                         <li key={item.title} className={`${menuIndex === index && 'bg-black bg-opacity-40'}`}>
-                          <div className='flex flex-row justify-end hover:bg-[#FFFFFF] hover:bg-opacity-15 transition-colors duration-200'>
-                            <Link href={item.href} className='px-2 py-2 flex items-center '>
+                          <div className='flex flex-row justify-end hover:bg-default-light hover:bg-opacity-15 transition-colors duration-200'>
+                            <Link href={item.href} className='px-2 py-2 flex items-center text-default-light'>
                               {item.title}
                             </Link>
                             {item.dropdownItems ? (
-                              <DefaultButton className='px-0 pe-2 py-0' onClick={() => handleMenuClick(index)}>
+                              <DefaultButton className='px-0 pe-2 py-0' color='btn-transparent' onClick={() => handleMenuClick(index)}>
                                 <ChevronDownIcon size='sm' />
                               </DefaultButton>
                             ) : (
@@ -207,7 +207,10 @@ export const Navbar = () => {
                             <ul className='flex flex-col z-10 w-full'>
                               {item.dropdownItems.map((dropdownItem) => (
                                 <li key={dropdownItem.title} className='flex flex-row w-full'>
-                                  <Link className='px-2 w-full text-end py-2 text-sm hover:bg-[#FFFFFF] hover:bg-opacity-15 transition-colors duration-200 pe-2' href={dropdownItem.href}>
+                                  <Link
+                                    className='px-2 w-full text-end py-2 text-sm text-default-light hover:bg-default-light hover:bg-opacity-15 transition-colors duration-200 pe-2'
+                                    href={dropdownItem.href}
+                                  >
                                     {dropdownItem.title}
                                   </Link>
                                 </li>

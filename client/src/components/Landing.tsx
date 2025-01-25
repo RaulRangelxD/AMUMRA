@@ -64,9 +64,10 @@ export const Landing = () => {
             zIndex: 2,
           }}
           animate={{
-            y: [0, 10, -10, 10, 0],
+            y: [0, 5, 0, 5, 0],
+            x: [0, 5, 10, 5, 0],
           }}
-          transition={{ repeat: Infinity, duration: 4 }}
+          transition={{ repeat: Infinity, duration: index == 2 ? 5.5 : index == 1 ? 7 : 4 }}
         />
       ))}
 
@@ -88,8 +89,10 @@ export const Landing = () => {
           }}
           animate={{
             rotate: [triangle.rotate, triangle.rotate + 5, triangle.rotate],
+            y: [0, 5, 0, 5, 0],
+            x: [0, 5, 10, 5, 0],
           }}
-          transition={{ repeat: Infinity, duration: 6 }}
+          transition={{ repeat: Infinity, duration: index == 2 ? 5 : index == 1 ? 7 : index ? 6 : 4 }}
         >
           <Image src='/obj_triangle.png' alt='triangle' width={triangle.size} height={triangle.size} />
         </motion.div>
