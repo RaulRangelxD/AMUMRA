@@ -1,29 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@config "./../../tailwind.config.ts";
 
 @layer components {
   .btn-primary-first {
     @apply text-default-light bg-primary hover:bg-primary-light border-2 border-primary hover:border-primary-light font-semibold rounded-md transition duration-500;
   }
   .btn-primary-second {
-    @apply text-default-light border-2 bg-default-dark bg-opacity-25 dark:bg-opacity-25 hover:bg-default-dark hover:bg-opacity-50 hover:dark:bg-opacity-50 border-primary hover:border-primary-light font-semibold rounded-md transition duration-500;
+    @apply text-default-light border-2 hover:bg-default-dark/30 border-primary hover:border-primary-light font-semibold rounded-md transition duration-500;
   }
   .btn-primary-third {
-    @apply text-default-light bg-default-dark bg-opacity-25 dark:bg-opacity-25 hover:bg-default-dark hover:bg-opacity-50 hover:dark:bg-opacity-50 font-semibold rounded-md transition duration-500;
+    @apply text-default-light hover:bg-default-dark/30 font-semibold rounded-md transition duration-500;
   }
 
   .btn-secondary-first {
     @apply text-default-light bg-secondary hover:bg-secondary-light border-2 border-secondary hover:border-secondary-light font-semibold rounded-md transition duration-500;
   }
   .btn-secondary-second {
-    @apply text-default-light border-2 bg-default-dark bg-opacity-25 dark:bg-opacity-25 hover:bg-default-dark hover:bg-opacity-50 hover:dark:bg-opacity-50 border-secondary hover:border-secondary-light font-semibold rounded-md transition duration-500;
+    @apply text-default-light border-2 hover:bg-default-dark/30 border-secondary hover:border-secondary-light font-semibold rounded-md transition duration-500;
   }
   .btn-secondary-third {
-    @apply text-default-light bg-default-dark bg-opacity-25 dark:bg-opacity-25 hover:bg-default-dark hover:bg-opacity-50 hover:dark:bg-opacity-50 font-semibold rounded-md transition duration-500;
+    @apply text-default-light hover:bg-default-dark/30 font-semibold rounded-md transition duration-500;
   }
 
   .btn-transparent {
-    @apply bg-transparent text-default-light hover:bg-default-dark hover:bg-opacity-50 hover:dark:bg-opacity-50 font-semibold rounded-md transition duration-500;
+    @apply bg-transparent text-default-light hover:bg-default-dark/30 font-semibold rounded-md transition duration-500;
   }
 }

@@ -9,6 +9,7 @@ import { motion } from 'motion/react'
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { ChevronDownIcon } from './icons/ChevronDown'
+import { LinkButton } from './buttons/LinkButton'
 
 export const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -53,9 +54,9 @@ export const Navbar = () => {
   const navItems: NavItem[] = [
     {
       title: 'Nosotras',
-      href: '#',
+      href: '/',
       dropdownItems: [
-        { title: 'Misión e Historia', href: '#' },
+        { title: 'Misión e Historia', href: '/misionehistoria' },
         { title: 'Programas', href: '#' },
         { title: 'Alianzas', href: '#' },
       ],
@@ -99,10 +100,6 @@ export const Navbar = () => {
       href: '#',
     },
     {
-      title: 'Apóyanos',
-      href: '#',
-    },
-    {
       title: 'Feria Migrante',
       href: '#',
       dropdownItems: [
@@ -140,10 +137,12 @@ export const Navbar = () => {
   }
 
   return (
-    <nav id='navbar-overlay' className='h-16 lg:h-20 z-50 fixed top-0 flex flex-row space-x-2 py-4 w-full items-center text-[#f8f9fa] px-2 xl:px-16'>
-      <Image className='max-h-14 w-auto' src='/Logo_AMUMRA_short_white.png' alt='Next.js logo' width={130} height={20} priority />
-
+    <nav id='navbar-overlay' className='from-10% h-12 lg:h-12 z-50 fixed top-0 lg:top-0 flex flex-row space-x-2 py-4 w-full items-center text-[#f8f9fa] px-2 xl:px-16'>
+      <LinkButton href='/'>
+        <Image className='max-h-10 w-auto' src='/Logo_AMUMRA_short_white.webp' alt='Next.js logo' width={130} height={20} priority />
+      </LinkButton>
       <div className='flex-grow'></div>
+
       <ul className='space-x-4 hidden lg:flex'>
         {navItems.map((item, index) => (
           <li key={item.title} className='relative' onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)}>
@@ -152,13 +151,13 @@ export const Navbar = () => {
             </Link>
             {item.dropdownItems && hoveredIndex === index && (
               <ul
-                className={`absolute w-48 backdrop-blur bg-black bg-opacity-40 border border-gray-200 rounded-md shadow-lg z-10 ${
+                className={`absolute w-48 backdrop-blur bg-black/40 border border-gray-200 rounded-md shadow-lg z-10 ${
                   index === navItems.length - 1 || index === navItems.length - 2 ? 'right-0' : 'left-0'
                 }`}
               >
                 {item.dropdownItems.map((dropdownItem) => (
                   <li key={dropdownItem.title} className='flex '>
-                    <Link className='w-full px-4 py-2 text-sm hover:bg-gray-100 hover:bg-opacity-15 transition-colors duration-200 rounded-md' href={dropdownItem.href}>
+                    <Link className='w-full px-4 py-2 text-sm hover:bg-gray-100/15 transition-colors duration-200 rounded-md' href={dropdownItem.href}>
                       {dropdownItem.title}
                     </Link>
                   </li>
@@ -171,7 +170,7 @@ export const Navbar = () => {
 
       <div className='block lg:hidden'>
         <DefaultButton type='button' onClick={toggleModal} color='btn-transparent'>
-          <MenuIcon />
+          <MenuIcon size='sm' />
         </DefaultButton>
         <AnimatePresence initial={false}>
           {isModalOpen && (
@@ -184,14 +183,14 @@ export const Navbar = () => {
                     animate={{ x: '1px' }}
                     exit={{ x: '150%' }}
                     transition={{ duration: 0.7 }}
-                    className='z-40 end-0 fixed top-16 left-1/2 flex-col overflow-hidden bg-black bg-opacity-40 backdrop-blur rounded-l-xl'
+                    className='z-40 end-0 fixed top-12 left-1/2 flex-col overflow-hidden bg-black/40 backdrop-blur rounded-l-xl'
                   >
                     <Dialog.Title className='hidden'>Menu</Dialog.Title>
                     <Dialog.Description className='hidden'>Navbar menu</Dialog.Description>
                     <ul className='flex flex-col'>
                       {navItems.map((item, index) => (
-                        <li key={item.title} className={`${menuIndex === index && 'bg-black bg-opacity-40'}`}>
-                          <div className='flex flex-row justify-end hover:bg-default-light hover:bg-opacity-15 transition-colors duration-200'>
+                        <li key={item.title} className={`${menuIndex === index && 'bg-black/40'}`}>
+                          <div className='flex flex-row justify-end hover:bg-default-light/15 transition-colors duration-200'>
                             <Link href={item.href} className='px-2 py-2 flex items-center text-default-light'>
                               {item.title}
                             </Link>
@@ -207,10 +206,7 @@ export const Navbar = () => {
                             <ul className='flex flex-col z-10 w-full'>
                               {item.dropdownItems.map((dropdownItem) => (
                                 <li key={dropdownItem.title} className='flex flex-row w-full'>
-                                  <Link
-                                    className='px-2 w-full text-end py-2 text-sm text-default-light hover:bg-default-light hover:bg-opacity-15 transition-colors duration-200 pe-2'
-                                    href={dropdownItem.href}
-                                  >
+                                  <Link className='px-2 w-full text-end py-2 text-sm text-default-light hover:bg-default-light/15 transition-colors duration-200 pe-2' href={dropdownItem.href}>
                                     {dropdownItem.title}
                                   </Link>
                                 </li>

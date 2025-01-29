@@ -4,10 +4,12 @@ import { motion } from 'framer-motion'
 
 export const Landing = () => {
   return (
-    <div className='relative flex items-center justify-center h-screen overflow-hidden bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
+    <div className='relative flex items-center justify-center w-full h-screen overflow-hidden bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
       {/* Main Text */}
       <div className='text-center z-10'>
-        <Image className='' src='/Logo_AMUMRA_large_white.png' alt='Next.js logo' width={510} height={186} priority />
+        <motion.div viewport={{ amount: 0.8, once: true }} initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+          <Image className='' src='/Logo_AMUMRA_large_white.webp' alt='Next.js logo' width={510} height={186} priority />
+        </motion.div>
       </div>
 
       {/* Rotating Rectangles */}
@@ -94,7 +96,7 @@ export const Landing = () => {
           }}
           transition={{ repeat: Infinity, duration: index == 2 ? 5 : index == 1 ? 7 : index ? 6 : 4 }}
         >
-          <Image src='/obj_triangle.png' alt='triangle' width={triangle.size} height={triangle.size} />
+          <Image src='/obj_triangle.webp' alt='triangle' width={triangle.size} height={triangle.size} />
         </motion.div>
       ))}
     </div>
