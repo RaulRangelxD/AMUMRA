@@ -11,8 +11,11 @@ const MontserratFont = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'AMUMRA',
-  description: 'AMUMRA',
+  title: {
+    template: '%s | AMUMRA',
+    default: 'AMUMRA',
+  },
+  description: 'Asociación Civil de Derechos Humanos Mujeres Unidas Migrantes y Refugiadas en Argentina',
 }
 
 export default function RootLayout({
