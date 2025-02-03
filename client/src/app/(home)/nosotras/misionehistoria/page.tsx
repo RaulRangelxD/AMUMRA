@@ -1,4 +1,4 @@
-import { MisionHistoria } from '@/components/pages/MisionHistoria'
+import { MisionHistoria } from '@/components/pages/nosotras/MisionHistoria'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

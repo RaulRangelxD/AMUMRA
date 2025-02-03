@@ -2,7 +2,7 @@
 
 import { SimpleCard } from '@/components/cards/SimpleCard'
 import { Landing } from '@/components/Landing'
-import { Facebook } from '@/components/facebook/Facebook'
+import { Facebook } from '@/components/Facebook'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'motion/react'

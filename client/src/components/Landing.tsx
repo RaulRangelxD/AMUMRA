@@ -7,7 +7,7 @@ export const Landing = () => {
     <div className='relative flex items-center justify-center w-full h-screen overflow-hidden bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
       {/* Main Text */}
       <div className='text-center z-10'>
-        <motion.div viewport={{ amount: 0.8, once: true }} initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+        <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
           <Image className='' src='/Logo_AMUMRA_large_white.webp' alt='Next.js logo' width={510} height={186} priority />
         </motion.div>
       </div>

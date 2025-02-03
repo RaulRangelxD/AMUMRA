@@ -2,14 +2,14 @@
 
 import Image from 'next/image'
 import * as Dialog from 'toldo'
-import { MenuIcon } from './icons/Menu'
+import { MenuIcon } from '@/components/icons/Menu'
 import { AnimatePresence } from 'motion/react'
 import { DefaultButton } from '@/components/buttons/DefaultButton'
 import { motion } from 'motion/react'
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { ChevronDownIcon } from './icons/ChevronDown'
-import { LinkButton } from './buttons/LinkButton'
+import { ChevronDownIcon } from '@/components/icons/ChevronDown'
+import { LinkButton } from '@/components/buttons/LinkButton'
 
 export const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -38,6 +38,7 @@ export const Navbar = () => {
         navbar?.classList.add('bg-gradient-to-r', 'from-[#333399]', 'to-[#ff00cc]')
       }
     }
+    handleScroll()
 
     window.addEventListener('scroll', handleScroll)
     return () => {
@@ -56,9 +57,9 @@ export const Navbar = () => {
       title: 'Nosotras',
       href: '/',
       dropdownItems: [
-        { title: 'Misión e Historia', href: '/misionehistoria' },
-        { title: 'Programas', href: '#' },
-        { title: 'Alianzas', href: '#' },
+        { title: 'Misión e Historia', href: '/nosotras/misionehistoria' },
+        { title: 'Programas', href: '/nosotras/programas' },
+        { title: 'Alianzas', href: '/nosotras/alianzas' },
       ],
     },
     {

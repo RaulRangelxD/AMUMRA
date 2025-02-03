@@ -1,13 +1,13 @@
 interface DefaultButtonProps {
   onClick?: () => void
   type?: 'button' | 'submit' | 'reset' | undefined
-  color?: 'btn-primary' | 'btn-secondary' | 'btn-third' | 'btn-transparent' | ''
+  color?: 'btn-primary-first' | 'btn-primary-second' | 'btn-primary-third' | 'btn-secondary-first' | 'btn-secondary-second' | 'btn-secondary-third' | 'btn-transparent' | ''
   size?: 'sm' | 'md' | 'lg'
   className?: string
   children: React.ReactNode
 }
 
-export const DefaultButton = ({ onClick, type = undefined, color = 'btn-primary', size = 'lg', className, children }: DefaultButtonProps) => (
+export const DefaultButton = ({ onClick, type = undefined, color = 'btn-primary-first', size = 'lg', className, children }: DefaultButtonProps) => (
   <button
     onClick={onClick}
     type={type}
