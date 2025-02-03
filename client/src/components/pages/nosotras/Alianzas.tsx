@@ -27,7 +27,7 @@ export const Alianzas = () => {
         >
           <h2 className='max-w-[100%] lg:max-w-2xl text-lg text-center'>AMUMRA trabaja gracias al apoyo de las siguientes organizaciones e instituciones:</h2>
           <div className='mt-4'>
-            <EmblaCarousel images={images} size={50} autoplayDelay={2000} buttons={false} dots={false} />
+            <EmblaCarousel images={images} size={50} buttons={false} dots={false} />
           </div>
         </motion.div>
       </section>

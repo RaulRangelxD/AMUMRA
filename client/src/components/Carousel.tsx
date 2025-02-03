@@ -2,7 +2,6 @@
 
 import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from 'embla-carousel-autoplay'
 import { DefaultButton } from '@/components/buttons/DefaultButton'
 import { ChevronLeftIcon } from '@/components/icons/ChevronLeft'
 import { ChevronRightIcon } from '@/components/icons/ChevronRight'
@@ -13,14 +12,12 @@ interface EmblaCarouselProps {
   w?: number
   h?: number
   size?: number
-  autoplayDelay?: number
   buttons?: boolean
   dots?: boolean
 }
 
-export function EmblaCarousel({ images, w = 0, h = 0, size = 100, autoplayDelay = 4000, buttons = true, dots = true }: EmblaCarouselProps) {
-  const autoplay = Autoplay({ delay: autoplayDelay, stopOnInteraction: false })
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplay])
+export function EmblaCarousel({ images, w = 0, h = 0, size = 100, buttons = true, dots = true }: EmblaCarouselProps) {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
   const [selectedIndex, setSelectedIndex] = useState(0)
   const flexImage = `flex-[0_0_${size}%]`
 
