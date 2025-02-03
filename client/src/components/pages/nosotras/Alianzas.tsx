@@ -37,7 +37,7 @@ export const Alianzas = () => {
           </div>
         </motion.div>
       </section>
-      <motion.article className='flex justify-center' viewport={{ amount: 0.7, once: true }} initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+      <motion.article className='flex justify-center mt-4' viewport={{ amount: 0.7, once: true }} initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
         <Image src={'/banner_alianzas.webp'} alt='image' width={0} height={0} sizes='100vw' priority className='w-full lg:w-2xl h-auto' />
       </motion.article>
     </div>
