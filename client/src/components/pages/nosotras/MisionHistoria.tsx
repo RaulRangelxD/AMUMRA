@@ -1,8 +1,9 @@
 'use client'
 
 import { LandingImage } from '@/components/LandingImage'
-import { EmblaCarousel } from '@/components/Carousel'
+import { EmblaSlider } from '@/components/Carousel'
 import { motion } from 'motion/react'
+import Image from 'next/image'
 
 export const MisionHistoria = () => {
   const images = [
@@ -62,7 +63,13 @@ export const MisionHistoria = () => {
         </motion.div>
       </section>
       <motion.article className='flex justify-center my-4' viewport={{ amount: 0.8, once: true }} initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-        <EmblaCarousel images={images} />
+        <EmblaSlider autoplayDelay={2000}>
+          {images.map((image, index) => (
+            <div key={index} className='flex-[0_0_50%]'>
+              <Image className='w-full h-auto' src={image.src} alt={image.alt} width={0} height={0} sizes='100vw' />
+            </div>
+          ))}
+        </EmblaSlider>
       </motion.article>
       <section className='bg-gradient-to-r from-[#333399] to-[#ff00cc] text-default-light'>
         <motion.div
