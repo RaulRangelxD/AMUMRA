@@ -29,8 +29,8 @@ export const Alianzas = () => {
           <div className='mt-4'>
             <EmblaSlider autoplayDelay={3000}>
               {images.map((image, index) => (
-                <div key={index} className='flex-[0_0_50%] items-center'>
-                  <Image className='w-full h-auto' src={image.src} alt={image.alt} width={0} height={0} sizes='100vw' />
+                <div key={index} className='flex-[0_0_100%] lg:flex-[0_0_50%] mx-2'>
+                  <Image key={index} className='w-full h-auto rounded-xl' src={image.src} alt={image.alt} width={0} height={0} sizes='100%' priority />
                 </div>
               ))}
             </EmblaSlider>

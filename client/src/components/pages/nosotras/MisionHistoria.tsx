@@ -63,10 +63,10 @@ export const MisionHistoria = () => {
         </motion.div>
       </section>
       <motion.article className='flex justify-center my-4' viewport={{ amount: 0.8, once: true }} initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-        <EmblaSlider autoplayDelay={2000}>
+        <EmblaSlider autoplayDelay={3000}>
           {images.map((image, index) => (
-            <div key={index} className='flex-[0_0_100%]'>
-              <Image className='w-full h-auto' src={image.src} alt={image.alt} width={0} height={0} sizes='100vw' />
+            <div key={index} className='flex-[0_0_100%] mx-2'>
+              <Image className='w-full h-auto rounded-xl' src={image.src} alt={image.alt} width={0} height={0} sizes='100%' />
             </div>
           ))}
         </EmblaSlider>
