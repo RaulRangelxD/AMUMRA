@@ -3,10 +3,18 @@
 import Link from 'next/link'
 import { DonateIcon } from '@/components/icons/Donate'
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 
 export const Donate = () => {
+  const router = useRouter()
+
+  const handleClick = (e: React.FormEvent) => {
+    e.preventDefault()
+    router.push('/apoyanos')
+  }
   return (
     <motion.div
+      onClick={handleClick}
       className='fixed left-0 top-30 z-50'
       initial={{ width: '44px' }}
       whileHover={{

@@ -1,12 +1,10 @@
-import { motion } from 'motion/react'
-
 interface FacebookProps {
   className?: string
   w: number
 }
 
 export const Facebook = ({ className, w }: FacebookProps) => (
-  <motion.div className={`flex flex-col items-center`} viewport={{ amount: 0.6, once: true }} initial={{ opacity: 0, x: -80 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
+  <div className={`flex flex-col items-center`}>
     <h2 className='font-bold text-xl w-full text-center mb-4'>Visitanos</h2>
 
     <iframe
@@ -17,5 +15,5 @@ export const Facebook = ({ className, w }: FacebookProps) => (
       allow='autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share'
       className={`${className} rounded-xl shadow-xl`}
     ></iframe>
-  </motion.div>
+  </div>
 )

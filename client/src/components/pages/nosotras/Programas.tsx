@@ -1,7 +1,7 @@
 'use client'
 
+import { DownToUpAnimation } from '@/components/Animations'
 import { LandingImage } from '@/components/LandingImage'
-import { motion } from 'motion/react'
 import Image from 'next/image'
 
 export const Programas = () => {
@@ -9,13 +9,7 @@ export const Programas = () => {
     <div className='flex flex-col w-full'>
       <LandingImage bg='bg-[url(/misionehistoria.png)]' text='Programas' />
       <section className='bg-gradient-to-r from-[#333399] to-[#ff00cc] text-default-light'>
-        <motion.div
-          className='flex flex-col items-center px-2 lg:px-12 py-8 justify-center'
-          viewport={{ amount: 0.6, once: true }}
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+        <DownToUpAnimation amount={0.5} className='flex flex-col items-center px-2 lg:px-12 py-8 justify-center'>
           <h2 className='max-w-[100%] lg:max-w-2xl font-bold text-2xl text-center'>PROGRAMAS En consonancia con nuestra misión, las acciones de AMUMRA tienen como propósito:</h2>
           <ul className='max-w-[100%] lg:max-w-2xl list-disc mx-1 mt-4'>
             <li>Difundir y promover los derechos, la integración, y el aporte socioeconómico y cultural de las mujeres migrantes y refugiadas y sus comunidades.</li>
@@ -26,19 +20,15 @@ export const Programas = () => {
             <li>Generar alianzas y trabajo articulado con organizaciones gubernamentales y de la sociedad civil que trabajen con y para las comunidades migrantes.</li>
             <li>Promover la construcción de conocimiento en torno a las comunidades migrantes.</li>
           </ul>
-        </motion.div>
+        </DownToUpAnimation>
       </section>
-      <motion.article className='flex justify-center my-4' viewport={{ amount: 0.7, once: true }} initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-        <Image src={'/placeholder.webp'} alt='image' width={0} height={0} sizes='100vw' priority className='w-full lg:w-2xl h-auto' />
-      </motion.article>
+      <article>
+        <DownToUpAnimation amount={0.5} className='flex justify-center my-4'>
+          <Image src={'/placeholder.webp'} alt='image' width={0} height={0} sizes='100vw' priority className='w-full lg:w-2xl h-auto' />
+        </DownToUpAnimation>
+      </article>
       <section className='bg-gradient-to-r from-[#333399] to-[#ff00cc] text-default-light'>
-        <motion.div
-          className='flex flex-col items-center px-2 lg:px-12 py-8 justify-center'
-          viewport={{ amount: 0.2, once: true }}
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+        <DownToUpAnimation amount={0.5} className='flex flex-col items-center px-2 lg:px-12 py-8 justify-center'>
           <h2 className='max-w-[100%] lg:max-w-2xl font-bold text-2xl text-center'>¿Cómo lo hacemos?</h2>
           <ul className='max-w-[100%] lg:max-w-2xl list-disc mx-1 mt-4'>
             <li>
@@ -63,7 +53,7 @@ export const Programas = () => {
               interculturalidad y derechos humanos.
             </li>
           </ul>
-        </motion.div>
+        </DownToUpAnimation>
       </section>
     </div>
   )

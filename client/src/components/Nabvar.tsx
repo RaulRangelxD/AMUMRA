@@ -78,23 +78,22 @@ export const Navbar = () => {
     },
     {
       title: 'Información',
-      href: '#',
+      href: '/informacion',
       dropdownItems: [
-        { title: 'Ingreso y Egreso del País', href: '#' },
-        { title: 'Residencias en Argentina', href: '#' },
-        { title: 'DNI Extranjeros', href: '#' },
-        { title: 'Derechos Migrantes', href: '#' },
-        { title: 'Derechos Refugiadxs', href: '#' },
+        { title: 'Ingreso y Egreso del País', href: '/informacion/ingresoyegresodelpais' },
+        { title: 'Residencias en Argentina', href: '/informacion/residenciasdeargentina' },
+        { title: 'DNI Extranjeros', href: '/informacion/dniextranjeros' },
+        { title: 'Derechos Migrantes', href: '/informacion/derechosmigrantes' },
       ],
     },
     {
       title: 'Red Federal',
-      href: '#',
-      dropdownItems: [{ title: 'Referentas Comunas', href: '#' }],
+      href: '/redfederal',
+      dropdownItems: [{ title: 'Referentas Comunas', href: '/redfederal/referentascomunas' }],
     },
     {
       title: 'Denuncias',
-      href: '#',
+      href: '/denuncias',
     },
     {
       title: 'Noticias',
@@ -112,17 +111,8 @@ export const Navbar = () => {
       ],
     },
     {
-      title: 'Encuestas',
-      href: '#',
-    },
-    {
       title: 'Contacto',
-      href: '#',
-      dropdownItems: [
-        { title: 'Voluntariado', href: '#' },
-        { title: 'Oficinas', href: '#' },
-        { title: 'Redes Sociales', href: '#' },
-      ],
+      href: '/contacto',
     },
   ]
 
