@@ -100,8 +100,12 @@ export const Navbar = () => {
       href: '#',
     },
     {
+      title: 'Apoyanos',
+      href: '/apoyanos',
+    },
+    {
       title: 'Feria Migrante',
-      href: '#',
+      href: 'feriamigrante',
       dropdownItems: [
         { title: 'Gastronomía y Pasteleria', href: '#' },
         { title: 'Servicios', href: '#' },
